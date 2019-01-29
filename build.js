@@ -1,5 +1,6 @@
 (function () {
     "use strict";
 
-    console.log("Hey muthafuckin world!!!");
+    console.log("" +
+        "\n\nBUILD OK");
 }());
