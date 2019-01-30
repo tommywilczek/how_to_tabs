@@ -19,4 +19,4 @@ In the series, we use these techniques to develop a basic tab-switching effect. 
 
 To Run the Build:
 =======
-- run `node build.js`
+- run `./jake.sh` to run the default build or `./jake.sh --tasks` to run the whole build.
