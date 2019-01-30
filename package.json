@@ -1,0 +1,24 @@
+{
+  "name": "how_to_tabs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "How To: Tabs ============ This is the source code for the [\"How To: Tabs\" series](http://www.letscodejavascript.com/v3/episodes/how_to) of James Shore's [Let's Code: Test-Driven JavaScript screencast](http://www.letscodejavascript.com).",
+  "main": "Jakefile.js",
+  "dependencies": {
+    "jake": "^8.0.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommywilczek/how_to_tabs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tommywilczek/how_to_tabs/issues"
+  },
+  "homepage": "https://github.com/tommywilczek/how_to_tabs#readme"
+}
