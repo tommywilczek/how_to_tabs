@@ -1,7 +1,6 @@
 (function () {
     "use strict";
 
-    var EXPECTED_NODE_VERSION = "v10.13.0"; //const in all caps, a convention
 
     desc("Default Build");
     task("default", ["version"], function () {
@@ -12,9 +11,13 @@
     task("version", function () {
         console.log("Checking Node version: .");
 
+        var packageJson = require("./package.json");
+
+        var expectedVersion = "v" + packageJson.engines.node;
+
         let actualVersion = process.version;
-        if (actualVersion !== EXPECTED_NODE_VERSION) {
-            fail("Your Node version " + actualVersion + " does not match expected version: " + EXPECTED_NODE_VERSION)
+        if (actualVersion !== expectedVersion) {
+            fail("Your Node version " + actualVersion + " does not match expected version: " + expectedVersion)
         }
     });
 

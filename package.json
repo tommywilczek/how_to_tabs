@@ -2,6 +2,9 @@
   "name": "how_to_tabs",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "10.13.0"
+  },
   "description": "How To: Tabs ============ This is the source code for the [\"How To: Tabs\" series](http://www.letscodejavascript.com/v3/episodes/how_to) of James Shore's [Let's Code: Test-Driven JavaScript screencast](http://www.letscodejavascript.com).",
   "main": "Jakefile.js",
   "dependencies": {
