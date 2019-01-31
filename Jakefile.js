@@ -59,7 +59,15 @@
                 node: true,
                 browser: true
             },
-            globals: {}
+            globals: {
+                //Mocha
+                describe: false,
+                it: false,
+                before: false,
+                beforeEach: false,
+                after: false,
+                afterEach: false
+            }
         }, complete, fail);
     }, { asyc: true });
 
