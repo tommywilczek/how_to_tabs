@@ -2,9 +2,10 @@
     "use strict";
 
     var semver = require("semver");
+    var jshint = require("simplebuild-jshint");
 
     desc("Default Build");
-    task("default", ["version"], function () {
+    task("default", ["version", "lint"], function () {
         console.log("\n\nBUILD OK");
     });
 
@@ -24,7 +25,21 @@
 
     desc("Lint JavaScript code");
     task("lint", function () {
-        jake.exec("node node_modules/.bin/jshint Jakefile.js", {interactive: true}, complete);
+        // jake.exec("node node_modules/.bin/jshint Jakefile.js", {interactive: true}, complete);
+
+        process.stdout.write("Linting JavaScript: ");
+
+        jshint.checkFiles({
+            files: "Jakefile.js",
+            options: {
+                bitwise: true,
+                eqeqeq: true,
+                forin: true,
+                freeze: true,
+                futurehostile: true
+            },
+            globals: {}
+        }, complete, fail);
     }, { asyc: true });
 
 }());
