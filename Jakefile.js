@@ -3,10 +3,15 @@
 (function () {
     "use strict";
 
-    //***** General purpose tasks
-
     var semver = require("semver");
     var jshint = require("simplebuild-jshint");
+
+    //***** General purpose tasks
+
+    desc("Start the Karma server (run this first)");
+    task("karma", function () {
+        console.log("starting karma server: ")
+    })
 
     desc("Default Build");
     task("default", ["version", "lint"], function () {
