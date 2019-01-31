@@ -1,7 +1,9 @@
-/* globals desc: false, task: false, complete: false, fail: false */
+/* globals jake: false, desc: false, task: false, complete: false, fail: false */
 
 (function () {
     "use strict";
+
+    //***** General purpose tasks
 
     var semver = require("semver");
     var jshint = require("simplebuild-jshint");
@@ -10,6 +12,14 @@
     task("default", ["version", "lint"], function () {
         console.log("\n\nBUILD OK");
     });
+
+    desc("Run a localhost server");
+    task("run", function () {
+
+        jake.exec("node node_modules/http-server/bin/http-server src", {interactive: true}, complete);
+    }, { asyc: true });
+
+    //***** Supporting Tasks
 
     desc("Check Node version");
     task("version", function () {
@@ -27,7 +37,6 @@
 
     desc("Lint JavaScript code");
     task("lint", function () {
-        // jake.exec("node node_modules/.bin/jshint Jakefile.js", {interactive: true}, complete);
 
         process.stdout.write("Linting JavaScript: ");
 
