@@ -64,7 +64,12 @@
         console.log();
         console.log("Testing JavaScript: ");
         karma.run({
-            configFile: KARMA_CONFIG
+            configFile: KARMA_CONFIG,
+            expectedBrowsers: [
+                "Chrome 71.0.3578 (Mac OS X 10.14.2)",
+                "Firefox 65.0.0 (Mac OS X 10.14.0)",
+                "Safari 12.0.2 (Mac OS X 10.14.2)"
+            ]
         }, complete, fail);
     }, { async: true });
 
