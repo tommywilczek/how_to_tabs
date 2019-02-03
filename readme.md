@@ -24,6 +24,7 @@ The Automated Build:
     - lints and tests my code automatically
     - 'cleans' by erasing all previously generated files
     - generates the directory with all the code for the browser will serve
+    - serves the application on localhost 8080
 
 Cross-Browser Testing:
 ===========
