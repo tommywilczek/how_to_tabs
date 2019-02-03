@@ -6,9 +6,10 @@
     var semver = require("semver");
     var jshint = require("simplebuild-jshint");
     var karma = require("simplebuild-karma");
-    var DIST_DIR = "generated/dist";
+    var shell = require("shell");
 
     var KARMA_CONFIG = "karma.conf.js";
+    var DIST_DIR = "generated/dist";
 
     //***** General purpose tasks
 
@@ -34,7 +35,8 @@
 
     desc("Erase all generated files");
     task("clean", function () {
-        console.log("Erasing generated files: .")
+        console.log("Erasing generated files: .");
+        shell.rm("rf", "generated");
     });
 
     //***** Supporting Tasks
@@ -83,8 +85,8 @@
     }, { async: true });
 
     desc("Build distribution directory");
-    task("build", [ "clean", DIST_DIR ], function () {
-        console.log("Building distribution directory:")
+    task("build", [  DIST_DIR ], function () {
+        console.log("Building distribution directory:");
     });
 
     directory(DIST_DIR);
