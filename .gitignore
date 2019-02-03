@@ -1,2 +1,11 @@
 .idea/workspace.xml
 .OS_Store
+
+# WebStorm
+.idea/workspace.xml
+
+# npm
+node_modules/**/.bin/
+
+# generated files
+generated/
