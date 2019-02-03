@@ -35,3 +35,4 @@ Cross-Browser Testing:
     - Firefox
     - Mobile Safari (on a simulated IOS device)
     - Mobile Chrome (on a simulated Android device)
+- The build will fail if one or more of these browsers are not tested. In order to stop this from happening, use `./jake.sh loose=true` and the tests will simply show a warning message.
