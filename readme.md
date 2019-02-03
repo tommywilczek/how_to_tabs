@@ -20,3 +20,12 @@ In the series, we use these techniques to develop a basic tab-switching effect. 
 To Run the Build:
 =======
 - run `./jake.sh` to run the default build or `./jake.sh --tasks` to run the whole build.
+
+Cross-Browser Testing:
+===========
+- By running one command, `./jake.sh`, the build uses Karma to test the application in the following browsers:
+    - Chrome
+    - Safari
+    - Firefox
+    - Mobile Safari (on a simulated IOS device)
+    - Mobile Chrome (on a simulated Android device)
