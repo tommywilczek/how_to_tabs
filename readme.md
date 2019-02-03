@@ -22,8 +22,8 @@ The Automated Build:
 - run `./jake.sh` to run the default build or `./jake.sh --tasks` to run the whole build.
 - Here's what the build performs each time:
     - lints and tests my code automatically
-    - 'cleans' by erasing all previously generated files
     - generates the directory with all the code for the browser will serve
+        - *I made sure not to mix the generated files and the source files*
     - serves the application on localhost 8080
 
 Cross-Browser Testing:
