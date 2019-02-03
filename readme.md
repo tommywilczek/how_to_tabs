@@ -17,9 +17,10 @@ The series covers a wide range of topics, including:
 
 In the series, we use these techniques to develop a basic tab-switching effect. This repository contains the source code developed in the series.
 
-To Run the Build:
+To Run the Automated Build:
 =======
 - run `./jake.sh` to run the default build or `./jake.sh --tasks` to run the whole build.
+    - The build lints and tests my code automatically
 
 Cross-Browser Testing:
 ===========
