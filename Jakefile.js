@@ -77,7 +77,7 @@
                 "Chrome 71.0.3578 (Mac OS X 10.14.2)",
                 "Firefox 65.0.0 (Mac OS X 10.14.0)",
                 "Safari 12.0.2 (Mac OS X 10.14.2)",
-                "Chrome Mobile 69.0.3497 (Android 0.0.0)",
+                //"Chrome Mobile 69.0.3497 (Android 0.0.0)",
                 "Mobile Safari 12.0.0 (iOS 12.1.0)"
             ],
             strict: !process.env.loose //add 'loose=true' to run
