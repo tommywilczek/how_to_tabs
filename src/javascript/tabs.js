@@ -2,6 +2,13 @@
     "use strict";
 
     exports.initialize = function initialize(element, className) {
-        element.setAttribute("class", className);
+
+        var existingClasses = element.getAttribute("class");
+        if (existingClasses === null) {
+            element.setAttribute("class", className);
+        }
+        else {
+            element.setAttribute("class", existingClasses + " " + className);
+        }
     };
 }());
