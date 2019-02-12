@@ -8,32 +8,26 @@
 
     describe("Tabs", function () {
 
-        it('hides an element', function () {
+        it('sets a class on an element', function () {
 
-            // Arrange. Create the element
             var element = addElement("div");
 
-            // Act
-            tabs.initialize(element);
+            tabs.initialize(element, "someClass");
 
-            // Assert. Assert element is not visible
+            assert.equal(getClass(element), "someClass");
 
-            assert.equal(getDisplay(element), "none");
-
-            // Remove. Remove the test element (reset the DOM)
             removeElement(element);
 
         });
+
+        function getClass(element) {
+            return element.getAttribute("class");
+        }
 
         function addElement(tagName) {
             var element = document.createElement(tagName);
             document.body.appendChild(element);
             return element;
-        }
-
-        function getDisplay(element) {
-            var styles = getComputedStyle(element);
-            return styles.getPropertyValue("display");
         }
 
         function removeElement(element) {
