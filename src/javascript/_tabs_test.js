@@ -8,6 +8,17 @@
 
     describe("Tabs", function () {
 
+        var container;
+
+        beforeEach(function () {
+            container = document.createElement("div");
+            document.body.appendChild(container);
+        });
+
+        afterEach(function () {
+            removeElement(container);
+        });
+
         it('sets a class on an element when that element has no existing classes', function () {
 
             var element = addElement("div");
@@ -35,7 +46,7 @@
 
         function addElement(tagName) {
             var element = document.createElement(tagName);
-            document.body.appendChild(element);
+            container.appendChild(element);
             return element;
         }
 
