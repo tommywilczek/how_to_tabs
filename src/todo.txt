@@ -1,6 +1,5 @@
 Mark a tab as active
 
-Hide all inactive content divs
-    - Hide one inactive content div
+Note hide active content div
 
-Use classList instead of getAttribute("class") in _tabs_test?
+Hide all content divs
