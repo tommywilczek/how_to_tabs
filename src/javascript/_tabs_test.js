@@ -1,57 +1,51 @@
 (function() {
     "use strict";
 
-    var assert = require("./assert");
+    var assert = require("./assert.js");
     var tabs = require("./tabs.js");
 
-
-
-    describe("Tabs", function () {
+    describe("Tabs", function() {
 
         var container;
 
-        beforeEach(function () {
+        beforeEach(function() {
             container = document.createElement("div");
             document.body.appendChild(container);
         });
 
-        afterEach(function () {
+        afterEach(function() {
             removeElement(container);
         });
 
-        it('hides an element by setting a class', function () {
-
-            var element = addElement("div");
-
-            tabs.initialize([element], "someClass");
-
-            assert.equal(getClasses(element), "someClass");
-
-            removeElement(element);
-
-        });
-
-        it('should hide multiple elements', function () {
+        it("hides all content elements except the default upon initialization", function() {
             var element1 = addElement("div");
-            var element2 = addElement("div");
+            var defaultElement = addElement("div");
             var element3 = addElement("div");
 
-            tabs.initialize([element1, element2, element3], "hideClass");
+            tabs.initialize({
+                content: [ element1, defaultElement, element3 ],
+                default: defaultElement,
+                contentHideClass: "hideClass"
+            });
 
-            assert.equal(getClasses(element1), "hideClass", "element 1");
-            assert.equal(getClasses(element2), "hideClass", "element 2");
-            assert.equal(getClasses(element3), "hideClass", "element 3");
+            assert.equal(getClasses(element1), "hideClass", "element 1 should be hidden");
+            assert.equal(getClasses(defaultElement), "", "default element should not be hidden");
+            assert.equal(getClasses(element3), "hideClass", "element 3 should be hidden");
         });
 
-        it('preserves an existing class when hiding an element', function () {
-            var element = addElement("div");
-            element.setAttribute("class", "existingClass");
+        it("preserves existing classes when hiding a content element", function() {
+            var defaultElement = addElement("div");
+            var hiddenElement = addElement("div");
+            hiddenElement.setAttribute("class", "existingClass");
 
-            tabs.initialize([element], "newClass");
+            tabs.initialize({
+                content: [defaultElement, hiddenElement],
+                default: defaultElement,
+                contentHideClass: "newClass"
+            });
 
-            assert.equal(getClasses(element), "existingClass newClass");
+            assert.equal(getClasses(hiddenElement), "existingClass newClass");
         });
-
 
         function getClasses(element) {
             return element.getAttribute("class");
@@ -66,6 +60,7 @@
         function removeElement(element) {
             element.parentNode.removeChild(element);
         }
+
     });
 
 }());
