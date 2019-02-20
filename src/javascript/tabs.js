@@ -20,6 +20,6 @@
         defaultElement.classList.remove(contentHideClass);
 
         if (tabs !== undefined) tabs[0].classList.add(activeTabClass);
-    };
+    }; 
 
 }());
