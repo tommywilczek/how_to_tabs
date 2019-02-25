@@ -31,7 +31,7 @@
                 content: [ content1, defaultContent, content3 ],
                 default: defaultTab,
                 activeTabClass: "activeTab",
-                contentHideClass: "hideClass"
+                hiddenContentClass: "hideClass"
             });
 
             assert.equal(getClasses(content1), "hideClass", "element 1 should be hidden");
@@ -51,7 +51,7 @@
                 content: [defaultContent, hiddenContent],
                 default: defaultTab,
                 activeTabClass: IRRELEVANT,
-                contentHideClass: "newClass"
+                hiddenContentClass: "newClass"
             });
 
             assert.equal(getClasses(hiddenContent), "existingClass newClass");
@@ -69,7 +69,7 @@
                 content: [ createTabContent(), defaultContent, createTabContent() ],
                 default: defaultTab,
                 activeTabClass: "activeTab",
-                contentHideClass: IRRELEVANT
+                hiddenContentClass: IRRELEVANT
             });
 
             assert.equal(getClasses(tab1), null, "tab 1 should not be styled");
