@@ -1,6 +1,8 @@
 (function() {
     "use strict";
 
+
+
     exports.initialize = function initialize(options) {
         var tabs = options.tabs;
         var content = options.content;
@@ -19,9 +21,15 @@
         });
         defaultElement.classList.remove(contentHideClass);
 
-
-
-        if (tabs !== undefined) tabs[0].classList.add(activeTabClass);
+        var activeIndex = findIndexOfDefaultElement(content, defaultElement);
+        tabs[activeIndex].classList.add(activeTabClass);
     };
+
+    function findIndexOfDefaultElement(contentTabs, defaultContentTab) {
+        for (var i = 0; i < contentTabs.length; i ++) {
+            if (contentTabs[i] === defaultContentTab) return i;
+        }
+        throw new Error("Could not find default in list");
+    }
 
 }());

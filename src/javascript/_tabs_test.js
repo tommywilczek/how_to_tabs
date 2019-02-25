@@ -68,9 +68,9 @@
                 contentHideClass: IRRELEVANT
             });
 
-            assert.equal(getClasses(tab1), "", "tab 1 should not be styled");
+            assert.equal(getClasses(tab1), null, "tab 1 should not be styled");
             assert.equal(getClasses(defaultTab), "activeTab", "default element should be styled");
-            assert.equal(getClasses(tab3), "", "tab 3 should not be styled");
+            assert.equal(getClasses(tab3), null, "tab 3 should not be styled");
         });
 
         function createTab() {
