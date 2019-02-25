@@ -10,11 +10,11 @@
         var contentHideClass = options.contentHideClass;
         var activeTabClass = options.activeTabClass;
 
-        if (tabs === undefined) throw new Error("Expected options.tabs");
-        if (content === undefined) throw new Error("Expected options.content");
-        if (defaultElement === undefined) throw new Error("Expected options.default");
-        if (activeTabClass === undefined) throw new Error("Expected options.activeTabClass");
-        if (contentHideClass === undefined) throw new Error("Expected options.contentHideClass");
+        checkOption(tabs, "options.tabs");
+        checkOption(content, "options.content");
+        checkOption(defaultElement, "options.defaultTab");
+        checkOption(activeTabClass, "options.activeTabClass");
+        checkOption(contentHideClass, "options.hiddenContentClass");
 
         content.forEach(function(element) {
             element.classList.add(contentHideClass);
@@ -30,6 +30,10 @@
             if (contentTabs[i] === defaultContentTab) return i;
         }
         throw new Error("Could not find default in list");
+    }
+
+    function checkOption(option, name) {
+        if (option === undefined) throw new Error("Expected " + name);
     }
 
 }());
