@@ -20,32 +20,36 @@
         });
 
         it("hides all content elements except the default upon initialization", function() {
+            var defaultTab = createTab();
+
             var content1 = createTabContent();
-            var defaultElement = createTabContent();
+            var defaultContent = createTabContent();
             var content3 = createTabContent();
 
             tabs.initialize({
-                tabs: [ createTab(), createTab(), createTab() ],
-                content: [ content1, defaultElement, content3 ],
-                default: defaultElement,
+                tabs: [ createTab(), defaultTab, createTab() ],
+                content: [ content1, defaultContent, content3 ],
+                default: defaultTab,
                 activeTabClass: "activeTab",
                 contentHideClass: "hideClass"
             });
 
             assert.equal(getClasses(content1), "hideClass", "element 1 should be hidden");
-            assert.equal(getClasses(defaultElement), "", "default element should not be hidden");
+            assert.equal(getClasses(defaultContent), "", "default element should not be hidden");
             assert.equal(getClasses(content3), "hideClass", "element 3 should be hidden");
         });
 
         it("preserves existing classes when hiding a content element", function() {
+            var defaultTab = createTab();
+
             var defaultContent = createTabContent();
             var hiddenContent = createTabContent();
             hiddenContent.setAttribute("class", "existingClass");
 
             tabs.initialize({
-                tabs: [ createTab(), createTab() ],
+                tabs: [ defaultTab, createTab() ],
                 content: [defaultContent, hiddenContent],
-                default: defaultContent,
+                default: defaultTab,
                 activeTabClass: IRRELEVANT,
                 contentHideClass: "newClass"
             });
@@ -63,7 +67,7 @@
             tabs.initialize({
                 tabs: [ tab1, defaultTab, tab3 ],
                 content: [ createTabContent(), defaultContent, createTabContent() ],
-                default: defaultContent,
+                default: defaultTab,
                 activeTabClass: "activeTab",
                 contentHideClass: IRRELEVANT
             });
