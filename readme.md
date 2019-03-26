@@ -19,13 +19,23 @@ In the series, we use these techniques to develop a basic tab-switching effect. 
 
 The Automated Build:
 =======
+To run the build:
+
+1. Run `./jake.sh karma` (Mac/Unix) or `jake karma` (Windows) to start the Karma server 
+2. Navigate at least one browser to `http://localhost:9876`
+3. Run `./jake.sh loose=true` (Mac/Unix) or `jake loose=true` (Windows) each time you want to run the build
+
 - run `./jake.sh` to run the default build or `./jake.sh --tasks` to run the whole build.
 - Here's what the build performs each time:
     - lints and tests code automatically
     - generates the directory with all the code for the browser will serve
     - run modules in tests and production code
         - to keep it all clean, it builds to a distribution directory which we could put on a server 
-    - serves the application on localhost 8080
+
+To run the application:
+
+1. Run `./jake.sh run` (Mac/Unix) or `jake run` (Windows) to start a local web server
+2. Navigate a browser to `http://localhost:8080`
 
 Cross-Browser Testing:
 ===========
