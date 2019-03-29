@@ -50,3 +50,6 @@ Cross-Browser Testing:
 Test-Driven JavaScript
 ==============
 - TDD is used to thoroughly to test how the web application interacts with the DOM 
+    - Hides all content except active tab
+    - Marks the active tab with the appropriate CSS
+    - Shows correct tab when activated upon click
