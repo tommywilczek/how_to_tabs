@@ -19,7 +19,7 @@
             removeElement(container);
         });
 
-        it("hides all content elements except the default upon initialization", function() {
+        it("use a class to hide all content elements except the default upon initialization", function() {
             var defaultTab = createTab();
 
             var content1 = createTabContent();
