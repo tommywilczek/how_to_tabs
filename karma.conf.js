@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Jan 31 2019 13:04:04 GMT-0600 (Central Standard Time)
+// Generated on Wed Aug 26 2015 15:28:15 GMT-0700 (PDT)
 
 module.exports = function(config) {
   config.set({
@@ -16,11 +16,12 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'src/javascript/**/*.js',
-      'src/vendor/chai-4.2.0.js'
+      'src/vendor/chai-2.1.0.js',
+      'src/vendor/classList.js'
     ],
 
 
-    // list of files / patterns to exclude
+    // list of files to exclude
     exclude: [
     ],
 
@@ -29,14 +30,15 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'src/javascript/**/*.js': ['commonjs'],
-      'src/vendor/chai-4.2.0.js': ['commonjs']
+      'src/vendor/chai-2.1.0.js': ['commonjs'],
+      'src/vendor/classList.js': ['commonjs']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['dots'],
 
 
     // web server port
@@ -63,10 +65,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
+    singleRun: false
   })
 }
